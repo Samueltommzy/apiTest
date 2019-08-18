@@ -7,9 +7,9 @@ const port         = process.env.PORT || 4000;
 const app          = express();
 const http         = require('http').createServer(app);
 const {validate,del} = require('./controller.js');
-
-
 const router       = express.Router();
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -17,8 +17,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 //------------------VALIDATION--------------------------------//
 router.post('/validation',(req,res)=>{
     let rules = ['firstName','lastName','country','email','Age'];
-    console.log(req.body);
-
     let api_resp = validate(req.body,rules); //Call the validate function on request body
 
     if (api_resp.length == 0 ) {
@@ -39,11 +37,9 @@ router.post('/validation',(req,res)=>{
 
 //-----------------------------DELETE-------------------------------//
 router.post('/delete',(req,res)=>{
-    let toDelete = "email"; //item to delete from object
-
+    let toDelete = "email"; //attribute to remove from request object if found
     let api_resp = del(req.body,toDelete);  //Call to the delete function
-
-    if (api_resp.length == 0 ) {
+    if (api_resp.length == undefined ) {
         return res.status(200).send({
             success: false,
             message: 'Attribute not found'
