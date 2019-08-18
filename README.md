@@ -16,4 +16,7 @@
     
 * To usethe /delete endpoint (if email attribute is present,it will removed else a no attribute response is returned)
   - using curl
-    `curl -X POST --header "Content-Type:application/Json" -d '{"firstName":"Sam","lastName":"Oluwatomi","email":"sam@gmail.com","country":"Nigeria"}' https://nattertest.herokuapp.com/delete`    
+    `curl -X POST --header "Content-Type:application/Json" -d '{"firstName":"Sam","lastName":"Oluwatomi","email":"sam@gmail.com","country":"Nigeria"}' https://nattertest.herokuapp.com/delete`   
+
+### API DOCumentation
+can be found in [https://documenter.getpostman.com/view/1711361/SVfGzCRV](https://documenter.getpostman.com/view/1711361/SVfGzCRV) 
