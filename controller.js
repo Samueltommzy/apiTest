@@ -2,6 +2,7 @@
 module.exports = {
     validate: function(data,rules) {
     let keys = Object.keys(data);
+    console.log(keys)
     if(JSON.stringify(keys.sort())==JSON.stringify(rules.sort())) {
         return [];
       }

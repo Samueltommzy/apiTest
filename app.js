@@ -14,6 +14,7 @@ const router       = express.Router();
 //------------------VALIDATION--------------------------------//
 router.post('/validation',(req,res)=>{
     let rules = ['firstName','lastName','country','email','Age'];
+    console.log(req.body);
 
     let api_resp = validate(req.body,rules); //Call the validate function on request body
 
