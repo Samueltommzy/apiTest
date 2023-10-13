@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //------------------VALIDATION--------------------------------//
 router.post('/validation',(req,res)=>{
     let rules = ['firstName','lastName','country','email','Age'];
+    console.log("xxx")
     let api_resp = validate(req.body,rules); //Call the validate function on request body
 
     if (api_resp.length == 0 ) {
